@@ -1,0 +1,126 @@
+package com.acme;
+
+public class LinkedList {
+
+	private Node headNode; 
+	
+	public LinkedList() {
+		
+	}
+	
+	public void addNode(Node node) {
+		
+		
+		Node tailNode = getTailNode();
+		if(tailNode==null) {
+			headNode = node;
+		}
+		else {
+		tailNode.setNextNode(node);
+		}	
+	}
+
+	public Node getTailNode() {
+		Node tailNode = null;
+		if (headNode == null) {
+			tailNode = null;
+		}
+		else {
+			
+		
+		Node currentNode = headNode;
+		
+		Node nextNode;
+		do {
+			
+			nextNode = currentNode.getNextNode();
+			
+			
+			if(nextNode != null) {
+				currentNode = currentNode.getNextNode();
+				
+			} else if(nextNode == null) {
+				
+				tailNode = currentNode;
+			}
+		} while(nextNode != null);
+		}
+		return tailNode;
+	}
+	
+	public  int getSize() {
+		int count = 0;
+	
+		if(headNode == null)
+		{
+			
+		} else {
+			count++;
+			Node currentNode = headNode;
+			Node nextNode;
+			do {
+				nextNode = currentNode.getNextNode();
+				if(nextNode!=null) {
+					count++;
+					currentNode = currentNode.getNextNode();
+				} else {
+					break;
+				}
+			}
+			while(nextNode!=null);
+		}
+		return count;
+	}
+	
+	public void deleteNode(int value) {
+		Node previousNode = null;
+		Node currentNode = null;
+		Node newNextNode = null;
+		previousNode = headNode;
+		currentNode = previousNode.nextNode;
+		newNextNode = currentNode.nextNode;
+		if(currentNode.getData()==value) {
+			currentNode.setNextNode(null);
+			previousNode.setNextNode(newNextNode);
+		}
+		
+		
+	}
+	
+	public void printValues() {
+		Node currentNode = headNode;
+		while(currentNode!=null) {
+			System.out.println(currentNode.getData());
+			currentNode = currentNode.nextNode;
+		}
+	}
+	
+	public static void main(String[] args) {
+		LinkedList myLinkedList = new LinkedList();
+		
+		Node tailNode = myLinkedList.getTailNode();
+		
+		Node node = new Node(20, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		System.out.println(node.getData());
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		node = new Node(30, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		System.out.println(node.getData());
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		int size = myLinkedList.getSize();
+		System.out.println(size);
+		
+		myLinkedList.printValues();
+		
+				
+	}
+}
+
+

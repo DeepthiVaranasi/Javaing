@@ -1,0 +1,59 @@
+package com.acme;
+
+public class ChapterOne{
+	
+	public static void main(String args[])
+	{
+		ChapterOne.printhello();
+		ChapterOne.printOperations(5,7);
+		ChapterOne.printMulttable(8);
+		ChapterOne.printCircle(3);
+		ChapterOne.printAverage(3, 4, 5);
+	}
+	
+	public static void printhello()
+	{
+		System.out.println("Hello");
+		System.out.println("Deepthi");
+	}
+
+	public static void printOperations(int a, int b)
+	{
+		int sum = a + b;
+		int diff = a - b;
+		int mult = a * b;
+		int mod = a % b;
+		System.out.println(sum);
+		System.out.println(diff);
+		System.out.println(mult);
+		System.out.println(mod);
+	}
+	
+	public static void printMulttable(int n)
+	{
+		int i;
+		for( i=0;i<10;i++)
+		{
+			System.out.println(n + "x" + i + "=" + (n*i));
+		}
+		
+	}
+	
+	public static void printCircle(int r)
+	{
+		double rad;
+		double circum;
+		rad = 2 * 3.14 * r;
+		circum = 3.14 * r * r;
+		System.out.println("Radius of circle is : " +rad);
+		System.out.println("circumference of circle is : " +circum);
+	}
+	
+	public static void printAverage(int a,int b,int c)
+	{
+		int sum = a + b + c;
+		float average = sum/3;
+		System.out.println(average);
+	}
+	
+}	

@@ -1,0 +1,14 @@
+package com.acme;
+
+public class ChapterOne{
+	
+	public static void main(String args[])
+	{
+		ChapterOne.printGreeting();
+	}
+	
+	public static void printGreeting()
+	{
+		System.out.println("Hello world");
+	}
+}

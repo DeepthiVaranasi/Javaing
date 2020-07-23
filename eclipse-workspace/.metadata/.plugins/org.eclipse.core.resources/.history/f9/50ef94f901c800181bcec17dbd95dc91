@@ -1,0 +1,51 @@
+package com.acme;
+
+public class EvenList {
+	public static void main(String[] args) {
+		LinkedList myLinkedList = new LinkedList();
+		
+		Node tailNode = myLinkedList.getTailNode();
+		Node node = new Node(20, null);
+		myLinkedList.addNode(node);
+		
+		
+		node = new Node(33, null);
+		
+		myLinkedList.addNode(node);
+		
+		node = new Node(45,null);
+		myLinkedList.addNode(node);
+		
+		node = new Node(55,null);
+		myLinkedList.addNode(node);
+		
+		node = new Node(88,null);
+		myLinkedList.addNode(node);
+		
+		int size = myLinkedList.getSize();
+		System.out.println(size);
+		
+		LinkedList evenLinkedList = new LinkedList();
+		
+		int[] values = new int[size];
+		values = myLinkedList.getValues();
+		
+		Node[] nodes = new Node[size];
+		nodes = myLinkedList.getNodes();
+		
+		int i;
+		for(i=0;i<size;i++) {
+			if(values[i]%2==0) {
+				evenLinkedList.addNode(nodes[i]);
+			}
+			
+		}
+		values = evenLinkedList.getValues();
+		
+				
+				
+	}
+}
+
+
+

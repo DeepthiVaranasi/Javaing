@@ -1,0 +1,259 @@
+package com.acme;
+
+import java.util.Arrays;
+
+public class LinkedList {
+
+	static private Node headNode; 
+	
+	
+	
+	public void addNode(Node node) {
+		
+		
+		Node tailNode = getTailNode();
+		if(tailNode==null) {
+			headNode = node;
+		}
+		else {
+		tailNode.setNextNode(node);
+		}	
+	}
+
+	public Node getTailNode() {
+		Node tailNode = null;
+		if (headNode == null) {
+			tailNode = null;
+		}
+		else {
+			
+		
+		Node currentNode = headNode;
+		
+		Node nextNode;
+		do {
+			
+			nextNode = currentNode.getNextNode();
+			
+			
+			if(nextNode != null) {
+				currentNode = currentNode.getNextNode();
+				
+			} else if(nextNode == null) {
+				
+				tailNode = currentNode;
+			}
+		} while(nextNode != null);
+		}
+		return tailNode;
+	}
+	
+	public  int getSize() {
+		int count = 0;
+	
+		if(headNode == null)
+		{
+			
+		} else {
+			count++;
+			Node currentNode = headNode;
+			Node nextNode;
+			do {
+				nextNode = currentNode.getNextNode();
+				if(nextNode!=null) {
+					count++;
+					currentNode = currentNode.getNextNode();
+				} else {
+					break;
+				}
+			}
+			while(nextNode!=null);
+		}
+		return count;
+	}
+	
+	public void search(int value) {
+		Node currentNode = headNode;
+		Node i;
+		for(i=currentNode;;currentNode.getNextNode()) {
+			if(currentNode.getData()==value) {
+				System.out.println("The element is found in the node  :"+i);
+				
+				
+			}
+		}
+		}
+	
+
+	
+	public void deleteList() {
+		Node currentNode = headNode;
+		while(currentNode!=null) {
+			Node next = currentNode.getNextNode();
+			currentNode= null;
+			currentNode = next;
+		}
+	}
+
+	
+	
+		
+	 public int printNode(int index)
+	    {
+	        Node currentNode = headNode;
+	        int count = 0;
+	        while(currentNode != null)
+	        {
+	            count++;
+	            if(count == index)
+	            {
+	                System.out.println("nth node is node"+count);
+	            }
+	            currentNode = currentNode.nextNode;
+	        }
+	        return count;
+	    }
+	 
+	 public int printEndNode(int index, int size)
+	    {
+	         int value = size - index;
+	         Node currentNode = headNode;
+	         int count = 0;
+	            while(currentNode != null)
+	            {
+	                count++;
+	                if(count == value)
+	                {
+	                    System.out.println("nth node from end  is node"+count);
+	                }
+	                currentNode = currentNode.nextNode;
+	            }
+	         return count;
+	    }
+		
+	 
+	 public void getNodes() {
+		 int size = getSize();
+		 Node[] nodes = new Node[size];
+		 Node currentNode;
+		 currentNode = headNode;
+		 Node nextNode = currentNode.getNextNode();
+		 
+		 int currentPosition = 0;
+		 nodes[currentPosition]=currentNode;
+		 
+		 while(nextNode!=null) {
+			 currentPosition++;
+			 currentNode = currentNode.getNextNode();
+			 if(currentPosition<=2) {
+			 nodes[currentPosition]=currentNode;
+			 }	
+			  nextNode = currentNode.getNextNode();
+			 }
+		 
+		 for ( Node a : nodes )
+			    System.out.println(a);
+	 }
+	 
+	 public void getValues()
+	    {
+	        int size = getSize();
+	        int[] values = new int[size];
+	        
+	        if(size > 0)
+	        {
+	            int pos = 0;
+	            Node currentNode = headNode;
+	            values[pos] = currentNode.getData();
+	            Node nextNode;
+	            do
+	            {
+	                nextNode = currentNode.getNextNode();
+	                if(nextNode != null)
+	                {
+	                    currentNode = currentNode.getNextNode();
+	                    pos++;
+	                    values[pos] = currentNode.getData();
+	                }
+	                
+	            }while(nextNode != null);
+	            
+	        }
+	        for( int a : values)
+	        	System.out.println(a);
+	        
+	        
+	    }
+	
+		public void Even() {
+			Node currentNode = headNode;
+			Node i;
+			
+			for(i=currentNode;;i=currentNode.getNextNode()) {
+				if(i.getData()%2==0) {
+					
+				}
+				
+			}
+		}
+		
+		
+	public void printValues() {
+		Node currentNode = headNode;
+		while(currentNode!=null) {
+			System.out.println(currentNode.getData());
+			currentNode = currentNode.nextNode;
+		}
+		headNode = null;
+	}
+	
+	public static void main(String[] args) {
+		LinkedList myLinkedList = new LinkedList();
+		
+		Node tailNode = myLinkedList.getTailNode();
+		
+		Node node = new Node(20, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		System.out.println(node.getData());
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		node = new Node(33, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		System.out.println(node.getData());
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+		node = new Node(45,null);
+		myLinkedList.addNode(node);
+		
+		int size = myLinkedList.getSize();
+		System.out.println(size);
+	/*	myLinkedList.search(20);
+		myLinkedList.deleteList();
+		myLinkedList.printNode(1);
+		myLinkedList.printEndNode(1, 3);*/
+		/*myLinkedList.getNodes();
+		myLinkedList.getValues();*/
+		LinkedList evenLinkedList = new LinkedList();
+		LinkedList oddLinkedList = new LinkedList();
+		Node currentNode = headNode;
+		Node i;
+		
+		for(i=currentNode;i==tailNode;i=currentNode.getNextNode()) {
+			if(i.getData()%2==0) {
+				evenLinkedList.addNode(i);
+			}
+			else {
+				oddLinkedList.addNode(i);
+				}	
+			}
+		evenLinkedList.getValues();
+		oddLinkedList.getValues();
+		
+				
+	}
+}
+
+

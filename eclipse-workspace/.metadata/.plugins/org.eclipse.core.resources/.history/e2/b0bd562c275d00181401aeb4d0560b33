@@ -1,0 +1,267 @@
+package com.acme;
+
+public class ChapterOne {
+
+	public static void main(String[] args) {
+		int[] numbers = new int[] { 3, 7, 4, 4, 5, 6 };
+		/*
+		 * System.out.println(args.length); ChapterOne.printhello();
+		 * ChapterOne.printOperations(5, 7); ChapterOne.printMulttable(8);
+		 * ChapterOne.printCircle(3); ChapterOne.printAverage(3, 4, 5);
+		 * ChapterOne.printRectangle(5, 6); ChapterOne.printSwap(2, 3);
+		 * ChapterOne.printCompare(4, 5); ChapterOne.printOddnumbers(10);
+		 * ChapterOne.printEvennumbers(10); ChapterOne.sumOfArrayElements();
+		 * ChapterOne.averageOfArrayElements(); ChapterOne.checkSpecificValue();
+		 * ChapterOne.findIndex();
+		 */
+		int maximum = ChapterOne.findMax(numbers);
+		System.out.println(maximum);
+
+	}
+
+	public static void printhello() {
+		System.out.println("Hello");
+		System.out.println("Deepthi");
+	}
+
+	public static void printOperations(int a, int b) {
+		int sum = a + b;
+		int diff = a - b;
+		int mult = a * b;
+		int mod = a % b;
+		System.out.println(sum);
+		System.out.println(diff);
+		System.out.println(mult);
+		System.out.println(mod);
+	}
+
+	public static void printMulttable(int n) {
+		int i;
+		for (i = 0; i < 10; i++) {
+			System.out.println(n + " x " + i + " = " + (n * i));
+		}
+
+	}
+
+	public static void printCircle(int r) {
+		double area;
+		double circum;
+		area = 2 * 3.14 * r;
+		circum = 3.14 * r * r;
+		System.out.println("Radius of circle is : " + area);
+		System.out.println("circumference of circle is : " + circum);
+	}
+
+	public static void printAverage(int a, int b, int c) {
+		int sum = a + b + c;
+		float average = sum / 3;
+		System.out.println("Average is : " + average);
+	}
+
+	public static void printRectangle(int l, int b) {
+		double area = l * b;
+		double perimeter = 2 * (l + b);
+		System.out.println("Area of rectangleis : " + area);
+		System.out.println("Perimeter of rectangle is : " + perimeter);
+	}
+
+	public static void printSwap(int a, int b) {
+		int c;
+		c = a;
+		a = b;
+		b = c;
+		System.out.println("value of a is " + a);
+		System.out.println("value os b is " + b);
+	}
+
+	public static void printCompare(int a, int b) {
+		if (a == b) {
+			System.out.println("a is equal to b");
+		}
+		if (a > b) {
+			System.out.println("a is greater than b");
+		} else {
+			System.out.println("a is lesser than b");
+		}
+	}
+
+	public static void printOddnumbers(int n) {
+		for (int i = 1; i < n; i = i + 2) {
+			System.out.println(i);
+		}
+	}
+
+	public static void printEvennumbers(int n) {
+		for (int i = 0; i < n; i = i + 2) {
+			System.out.println(i);
+		}
+	}
+
+	public static void sumOfArrayElements() {
+		int array[] = { 1, 2, 3, 4, 5 };
+		int sum = 0;
+		for (int i = 0; i < 5; i++)
+			sum = sum + array[i];
+		System.out.println("Sum is :" + sum);
+	}
+
+	public static void averageOfArrayElements() {
+		int array[] = { 1, 2, 3, 4, 5 };
+		int sum = 0;
+		for (int a = 0; a < 5; a++)
+			sum = sum + array[a];
+		int length = 5;
+		double average = sum / length;
+		System.out.println("Average is : " + average);
+	}
+
+	public static void checkSpecificValue() {
+		int array[] = { 20, 30, 40, 50, 60 };
+		for (int i = 0; i < 5; i++)
+			if (array[i] == 50)
+				System.out.println("Item found");
+			else
+				System.out.println("Item you have entered is not in the array list");
+	}
+
+	public static void findIndex() {
+		int array[] = { 10, 20, 30, 40, 50 };
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Index and its values are: " + i + "-" + array[i]);
+		}
+	}
+	/*
+	 * public static void removeElement() { int array[] = {1,2,3,4,5}; for(int
+	 * i=0;i<5;i++) if(array[i]=5)
+	 * 
+	 * }
+	 */
+
+	public static int findMax(int[] numbers) {
+		int max = numbers[0];
+		int noOfelements = numbers.length;
+
+		for (int i = 0; i < noOfelements; i++) {
+			if (max < numbers[i]) {
+				max = numbers[i];
+
+			}
+		}
+		return max;
+	}
+
+	public static void printConcatenatedString() {
+		String a = "Hello";
+		String b = "Gopal mama";
+		String c = a.concat(b);
+		System.out.println("String after concatenation is " + c);
+	}
+
+	public static void stringTrim() {
+		String a = "This is     ";
+		String b = a.trim();
+		System.out.println("String after trimming is " + b);
+	}
+
+	public static void stringUpperCase() {
+		String a = "i am deepthi";
+		String b = a.toUpperCase();
+		System.out.println("String in uppercase form" + b);
+	}
+
+	public static void stringLowerCase() {
+		String a = "I AM DEEPTHI";
+		String b = a.toLowerCase();
+		System.out.println("String in lowercase form" + b);
+	}
+
+	public static void stringSubstring() {
+		String a = "I am Deepthi";
+		String b = a.substring(5, 10);
+		String c = a.substring(7);
+		System.out.println("Substring is:" + b);
+		System.out.println("Substring is : " + c);
+	}
+
+	public static void stringReplace() {
+		String a = "I am a cat";
+		String b = a.replace('c', 'r');
+		System.out.println("String after replacement : " + b);
+	}
+
+	public static void stringLength() {
+		String a = "Hellloooooo";
+		int length = a.length();
+		System.out.println("Length of the string is " + length);
+	}
+
+	public static void stringStartwith() {
+		String a = "Deepthi is lalala";
+		String b = "Deepthi ennfjnfn";
+		boolean c = a.startsWith(b);
+		System.out.println("Does it start with the same word?" + c);
+	}
+
+	public static void stringReplaceAll() {
+		String a = "Cat is my favorite";
+		String b = a.replaceAll("cat", "rat");
+		System.out.println("String after replacing the whole word" + b);
+	}
+
+	public static void stringCompare() {
+		String a = "Hi ThiS Is DeEpThI";
+		String b = "Hi this is deepthi";
+		boolean c = a.equalsIgnoreCase(b);
+		System.out.println("Are the two strings equla?" + c);
+	}
+
+	public static void findSmallest(int a, int b, int c) {
+		if ((a < b) && (a < c)) {
+			System.out.println(a);
+		}
+		if (b < c) {
+			System.out.println(b);
+		} else {
+			System.out.println(c);
+		}
+	}
+
+	public static void findAverage(int[] inputs) {
+		int length = inputs.length;
+		int sum = 0;
+		for (int i = 0; i < inputs.length; i++) {
+			sum = sum + inputs[i];
+		}
+		double average = sum / length;
+		System.out.println("Average is :" + average);
+	}
+
+	public static void findVowels(String input) {
+		int vowels = 0;
+		for(int i = 0;i<input.length();i++) {
+			  if (input.charAt(i) == 'a' || input.charAt(i) == 'e' || input.charAt(i) == 'i'
+	                    || input.charAt(i) == 'o' || input.charAt(i) == 'u') {
+				  vowels++ ;
+			  }
+		}
+		System.out.println(vowels);
+}
+	
+	public static void sumOfDigits(int n) {
+		int sum = 0;
+		while(n>0) {
+			sum = sum + n%10;
+			n = n/10 ;
+		}
+		System.out.println(n);
+	}
+	
+	public static void checkIfLeapYear(long year) {
+		boolean a = (year%4) == 0;
+		System.out.println(a);
+	}
+	}
+
+
+
+

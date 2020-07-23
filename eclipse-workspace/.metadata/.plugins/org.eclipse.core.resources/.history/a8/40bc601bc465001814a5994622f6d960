@@ -1,0 +1,414 @@
+package com.acme;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.File;
+import java.util.Date;
+
+import org.junit.jupiter.api.Test;
+
+class ChapterOneTest {
+
+	@Test
+	public void testFindMax() {
+
+		int[] numbers = new int[] {3, 7, 4, 4, 5, 6};
+		int maximum = ChapterOne.findMax(numbers);
+		System.out.println(maximum);
+	}
+	
+	@Test
+	public void testPrintHello() {
+		ChapterOne.printhello();
+	}
+	
+	@Test
+	public void testPrintOperations() {
+		ChapterOne.printOperations(5, 6);
+	}
+	
+	@Test
+	public void testPrintMulttable() {
+		ChapterOne.printMulttable(9);
+	}
+	
+	@Test
+	public void testPrintCircle() {
+		ChapterOne.printCircle(5);
+	}
+	
+	@Test
+	public void testPrintSwap() {
+		ChapterOne.printSwap(4, 6);
+	}
+	
+	@Test
+	public void testSumOfArrayElements() {
+		ChapterOne.averageOfArrayElements();
+	}
+	
+	@Test
+	public void testCheckSpecificValue() {
+		ChapterOne.checkSpecificValue();
+	}
+	
+	@Test
+	public void testfindIndex() {
+		ChapterOne.findIndex();
+	}
+	
+	@Test
+	public void testConcatenatedString() {
+		ChapterOne.printConcatenatedString();
+	}
+	
+	@Test
+	public void testStringTrim() {
+		ChapterOne.stringTrim();
+	}
+	
+	@Test
+	public void testStringUpperCase() {
+		ChapterOne.stringUpperCase();
+	}
+	
+	@Test
+	public void testStringLowerCase() {
+		ChapterOne.stringLowerCase();
+	}
+	
+	@Test
+	public void testStringSubstring() {
+		ChapterOne.stringSubstring();
+	}
+	
+	@Test
+	public void testStringReplace() {
+		ChapterOne.stringReplace();
+	}
+	
+	@Test
+	public void testStringLength() {
+		ChapterOne.stringLength();
+	}
+	
+	@Test
+	public void testStringStartwith() {
+		ChapterOne.stringStartwith();
+	}
+	
+	@Test
+	public void testStringReplaceAll() {
+		ChapterOne.stringReplaceAll();
+	}
+	
+	@Test
+	public void testStringCompare() {
+		ChapterOne.stringCompare();
+	}
+	
+	@Test
+	public void testSmallest() {
+		ChapterOne.findSmallest(34,14,95);
+	}
+	
+	@Test
+	public void testAverage() {
+		int[] inputs = new int[] {3, 3, 3};
+		double expectedAverage = 3.0;
+		double calculatedAverage = ChapterOne.findAverage(inputs);
+		assertEquals(expectedAverage, calculatedAverage);
+	}
+	
+	
+	
+	@Test
+	public void testSumOfDigits() {
+		ChapterOne.sumOfDigits(32);
+		
+	}
+	
+	@Test
+	public void testLoopYear() {
+		ChapterOne.checkIfLeapYear(2000);
+	}
+	
+	@Test
+	public void testTriangleArea() {
+		ChapterOne.triagleArea(10, 20, 30);
+	}
+	
+	@Test
+	public void testPentagonArea() {
+		ChapterOne.PentagonArea(8, 9);
+	}
+	
+	@Test
+	public void testPrintMatrix() {
+		ChapterOne.printMatrix(3);
+	}	
+	
+	@Test
+	public void testMathRandom() {
+		double x = Math.random() * 2;
+		System.out.println((int) x);
+	}	
+	
+	@Test
+	public void testFileOrDirectory() {
+		String directoryName = "/Users/vdeepthi";
+		ChapterOne.checkFileOrDirectory(directoryName);
+	}
+	
+	@Test
+	public void testCheckReadPermission() {
+		String directoryName = "/Users/vdeepthi";
+		ChapterOne.checkReadPermission(directoryName);	
+	}
+	
+	@Test
+	public void testCheckWritePermission() {
+		String directoryName = "/Users/vdeepthi";
+		ChapterOne.CheckWritePermission(directoryName);
+	}	
+	
+	@Test
+	public void testCreateFile() throws Exception {
+		ChapterOne.createFile() ;
+		}
+	
+	
+	
+	
+	@Test
+	public void testWordsInString() {
+		String a = "Hello this is deepthii";
+		int expectedValue = 5;
+		int numberOfWords = ChapterOne.wordsinString(a);
+		System.out.println(numberOfWords);
+		assertEquals(expectedValue, numberOfWords);
+	}
+	
+	@Test
+	public void testmiddleWord() {
+		String a = "Helloy";
+		String b = ChapterOne.middleWord(a);
+		System.out.println(b);
+	}	
+	
+	@Test
+	public void testCompareFiles() {
+
+       String pathName = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		File a = new File(pathName) ;
+		pathName = "/tmp/xyz.txt";
+	   File b = new File(pathName);	
+		int result = ChapterOne.compareFiles(a, b);
+		System.out.println(result);
+	}
+	
+	@Test
+	public void testVowels() {
+		String input = "I AM DEEPTHI";
+		int expectedVowels = 5;
+		int noOfVowels = ChapterOne.findVowels(input);
+		assertEquals(expectedVowels, noOfVowels);
+		//System.out.println(noOfVowels);
+	}
+	
+	@Test
+	public void testreadInput() throws Exception{
+		ChapterOne.readInput();
+	}
+	
+	@Test
+	public void testfileSizes() {
+		String pathName = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		File file = new File(pathName);
+	    double size = ChapterOne.fileSizes(file);
+	    System.out.println(size);
+	}
+	
+	@Test
+	public void testfindLongestWords() throws Exception{
+		String filePath = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		String longestWord = ChapterOne.findLongestWords(filePath);
+		System.out.println(longestWord);
+	}
+	
+	@Test
+	public void testreadFile() throws Exception {
+		String filePath = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		ChapterOne.readFile(filePath);
+	}	
+	
+	@Test
+	public void testreadFileByFile() throws Exception {
+		String filePath = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		File file = new File(filePath);
+		ChapterOne.readFile(file);
+	}	
+	
+	@Test
+	public void testlastModified() throws Exception {
+		String filePath = "/Users/vdeepthi/eclipse-workspace/LearningJava/varanasi";
+		Date lastModified = ChapterOne.lastModified(filePath);
+		System.out.println(lastModified);
+	}
+	
+	@Test
+	public void testCreateArrayList(){
+		ChapterOne.CreateArrayList();
+	}
+	
+	@Test
+	public void testPrintArrayList(){
+		ChapterOne.PrintArrayList();
+	}
+	
+	@Test
+	public void testAddInToArrayList(){
+		ChapterOne.addInToArrayList();
+	}
+	
+	@Test
+	public void testGetElement(){
+		ChapterOne.getElement();
+	}
+	
+	@Test
+	public void testSetElement(){
+		ChapterOne.setElement();
+	}
+	
+	@Test
+	public void testRemoveElement(){
+		ChapterOne.removeElement();
+	}
+
+	@Test
+	public void testSearchElement(){
+		ChapterOne.searchElement();
+	}
+	
+	@Test
+	public void testSortArray(){
+		ChapterOne.sortArray();
+	}
+	
+	@Test
+	public void testCopyArray(){
+		ChapterOne.copyArray();
+	}
+	
+	@Test
+	public void shuffleArray() {
+		ChapterOne.shuffleArray();
+	}
+
+	@Test
+	public void testReverseArray() {
+		ChapterOne.reverseArray();
+	}
+	
+	@Test
+	public void testSubArray() {
+		ChapterOne.subArray();
+	}
+	
+	@Test
+	public void testJoinArrays() {
+		ChapterOne.joinArrays();
+	}
+	
+	@Test
+	public void testswapElementsInArray() {
+		ChapterOne.swapElementsInArray();
+	}
+
+	@Test
+	public void testEmptyArray() {
+		ChapterOne.emptyArray();
+	}
+	
+	@Test
+	public void testCheckIfEmpty() {
+		ChapterOne.checkIfEmpty();
+	}
+
+	@Test
+	public void testIncreaseSizeOfArray() {
+		ChapterOne.increaseSizeOfArray();
+	}
+
+	@Test
+	public void testCreateLinkedList(){
+		ChapterOne.createLinkedList();
+	}
+	
+	@Test
+	public void testDisplayLinkedList(){
+		ChapterOne.displayLinkedList();
+	}
+	
+	@Test
+	public void testAddInToLinkedList(){
+		ChapterOne.addInToLinkedList();
+	}
+	
+	@Test
+	public void testAdddInToLinkedList(){
+		ChapterOne.adddInToLinkedList();
+	}
+	
+	@Test
+	public void testOffersFirst(){
+		ChapterOne.offersFirst();
+	}
+	
+
+	@Test
+	public void testOffersLast(){
+		ChapterOne.offersLast();
+	}
+	
+	@Test
+	public void insertElements(){
+		ChapterOne.insertElements();
+	}
+	
+
+	@Test
+	public void getElements(){
+		ChapterOne.getElements();
+	}
+	
+
+	@Test
+	public void getFirstAndLast(){
+		ChapterOne.getFirstAndLast();
+	}
+	
+	@Test
+	public void displayElements(){
+		ChapterOne.displayElements();
+	}
+	
+	@Test
+	public void removeElements(){
+		ChapterOne.removeElements();
+	}
+	
+	@Test
+	public void removeFirstAndLast(){
+		ChapterOne.removeFirstAndLast();
+	}
+	
+	
+	/*@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+}

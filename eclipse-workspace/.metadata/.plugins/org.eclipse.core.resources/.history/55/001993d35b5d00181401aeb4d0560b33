@@ -1,0 +1,153 @@
+package com.acme;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class ChapterOneTest {
+
+	@Test
+	public void testFindMax() {
+
+		int[] numbers = new int[] {3, 7, 4, 4, 5, 6};
+		int maximum = ChapterOne.findMax(numbers);
+		System.out.println(maximum);
+	}
+	
+	@Test
+	public void testPrintHello() {
+		ChapterOne.printhello();
+	}
+	
+	@Test
+	public void testPrintOperations() {
+		ChapterOne.printOperations(5, 6);
+	}
+	
+	@Test
+	public void testPrintMulttable() {
+		ChapterOne.printMulttable(9);
+	}
+	
+	@Test
+	public void testPrintCircle() {
+		ChapterOne.printCircle(5);
+	}
+	
+	@Test
+	public void testPrintSwap() {
+		ChapterOne.printSwap(4, 6);
+	}
+	
+	@Test
+	public void testSumOfArrayElements() {
+		ChapterOne.averageOfArrayElements();
+	}
+	
+	@Test
+	public void testCheckSpecificValue() {
+		ChapterOne.checkSpecificValue();
+	}
+	
+	@Test
+	public void testfindIndex() {
+		ChapterOne.findIndex();
+	}
+	
+	@Test
+	public void testConcatenatedString() {
+		ChapterOne.printConcatenatedString();
+	}
+	
+	@Test
+	public void testStringTrim() {
+		ChapterOne.stringTrim();
+	}
+	
+	@Test
+	public void testStringUpperCase() {
+		ChapterOne.stringUpperCase();
+	}
+	
+	@Test
+	public void testStringLowerCase() {
+		ChapterOne.stringLowerCase();
+	}
+	
+	@Test
+	public void testStringSubstring() {
+		ChapterOne.stringSubstring();
+	}
+	
+	@Test
+	public void testStringReplace() {
+		ChapterOne.stringReplace();
+	}
+	
+	@Test
+	public void testStringLength() {
+		ChapterOne.stringLength();
+	}
+	
+	@Test
+	public void testStringStartwith() {
+		ChapterOne.stringStartwith();
+	}
+	
+	@Test
+	public void testStringReplaceAll() {
+		ChapterOne.stringReplaceAll();
+	}
+	
+	@Test
+	public void testStringCompare() {
+		ChapterOne.stringCompare();
+	}
+	
+	@Test
+	public void testSmallest() {
+		ChapterOne.findSmallest(34,14,95);
+	}
+	
+	@Test
+	public void testAverage() {
+		int[] inputs = new int[] {3, 3, 3};
+		double expectedAverage = 2.0;
+		double calculatedAverage = ChapterOne.findAverage(inputs);
+		assertEquals(expectedAverage, calculatedAverage);
+	}
+	
+	@Test
+	public void testVowels() {
+		String input = "I am Deepthi";
+		ChapterOne.findVowels(input);
+		
+	}
+	
+	@Test
+	public void testSumOfDigits() {
+		ChapterOne.sumOfDigits(32);
+		
+	}
+	
+	@Test
+	public void testLoopYear() {
+		ChapterOne.checkIfLeapYear(2000);
+	}
+	
+	@Test
+	public void testTriangleArea() {
+		ChapterOne.triagleArea(10, 20, 30);
+	}
+	
+	@Test
+	public void testPentagonArea() {
+		ChapterOne.PentagonArea(8, 9);
+	}
+	/*@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+	*/
+
+}

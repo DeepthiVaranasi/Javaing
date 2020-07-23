@@ -1,0 +1,86 @@
+package com.acme;
+
+public class Binaryy{
+	private static Node head;
+	
+	public void addNode(Node node)
+	{
+		Node tail = getTailNode();
+		if(tail == null)
+		{
+			head = node;
+		}
+		else
+		{
+			tail.setNextNode(node);
+		}
+	}
+	
+	private static Node getTailNode() {
+		Node tail = null;
+		if(head == null)
+		{
+			tail = null;
+		}
+		else
+		{
+			Node currentNode = head;
+			Node nextNode;
+			do {
+				nextNode = currentNode.getNextNode();
+				if(nextNode!=null) {
+					currentNode = currentNode.getNextNode();
+				}
+				else if(nextNode == null) {
+					tail = currentNode;
+				}
+			}
+			while(nextNode !=null);
+		}
+					return tail;
+				}
+			public static int noOfNodes() {
+				Node node;
+				Node currentNode = head;
+				int count = 1;
+				node = currentNode.getNextNode();
+				while(node!=null) {
+					count++;
+					node = node.getNextNode();
+					return count;
+				}
+				return noOfNodes();
+				
+			}
+		public void deleteNode()
+		
+	
+	public static void main(String args[])
+	{
+		LinkedList linkedList = new LinkedList(2);
+		Node node1 = new Node(1,null);
+		System.out.println(node1);
+		linkedList.addNode(node1);
+		Node tailNode = linkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		Node node2 = new Node(2,null);
+		linkedList.addNode(node2);
+		System.out.println(node2);
+		tailNode = linkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		Node node3 = new Node(3,null);
+		linkedList.addNode(node3);
+		System.out.println(node3);
+		tailNode = linkedList.getTailNode();
+		System.out.println(tailNode);
+		int value = node3.getData();
+		System.out.println(value);
+		int size = Binaryy.noOfNodes();
+		System.out.println(size);
+	
+	}
+	}
+	
+

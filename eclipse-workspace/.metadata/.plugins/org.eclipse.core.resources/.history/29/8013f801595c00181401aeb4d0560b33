@@ -1,0 +1,173 @@
+package com.acme;
+
+public class ChapterOne {
+
+	public static void main(String[] args) {
+		int[] numbers = new int[] {3, 7, 4, 4, 5, 6};
+	/*	System.out.println(args.length);
+		ChapterOne.printhello();
+		ChapterOne.printOperations(5, 7);
+		ChapterOne.printMulttable(8);
+		ChapterOne.printCircle(3);
+		ChapterOne.printAverage(3, 4, 5);
+		ChapterOne.printRectangle(5, 6);
+		ChapterOne.printSwap(2, 3);
+		ChapterOne.printCompare(4, 5);
+		ChapterOne.printOddnumbers(10);
+		ChapterOne.printEvennumbers(10);
+		ChapterOne.sumOfArrayElements();
+		ChapterOne.averageOfArrayElements();
+		ChapterOne.checkSpecificValue();
+		ChapterOne.findIndex(); */
+		int maximum = ChapterOne.findMax(numbers);
+		System.out.println(maximum);
+		
+	}
+
+	public static void printhello() {
+		System.out.println("Hello");
+		System.out.println("Deepthi");
+	}
+
+	public static void printOperations(int a, int b) {
+		int sum = a + b;
+		int diff = a - b;
+		int mult = a * b;
+		int mod = a % b;
+		System.out.println(sum);
+		System.out.println(diff);
+		System.out.println(mult);
+		System.out.println(mod);
+	}
+
+	public static void printMulttable(int n) {
+		int i;
+		for (i = 0; i < 10; i++) {
+			System.out.println(n + " x " + i + " = " + (n * i));
+		}
+
+	}
+
+	public static void printCircle(int r) {
+		double area;
+		double circum;
+		area = 2 * 3.14 * r;
+		circum = 3.14 * r * r;
+		System.out.println("Radius of circle is : " + area);
+		System.out.println("circumference of circle is : " + circum);
+	}
+
+	public static void printAverage(int a, int b, int c) {
+		int sum = a + b + c;
+		float average = sum / 3;
+		System.out.println("Average is : " + average);
+	}
+
+	public static void printRectangle(int l, int b) {
+		double area = l * b;
+		double perimeter = 2 * (l + b);
+		System.out.println("Area of rectangleis : " + area);
+		System.out.println("Perimeter of rectangle is : " + perimeter);
+	}
+
+	public static void printSwap(int a, int b) {
+		int c;
+		c = a;
+		a = b;
+		b = c;
+		System.out.println("value of a is " + a);
+		System.out.println("value os b is " + b);
+	}
+
+	public static void printCompare(int a, int b) {
+		if (a == b) {
+			System.out.println("a is equal to b");
+		}
+		if (a > b) {
+			System.out.println("a is greater than b");
+		} else {
+			System.out.println("a is lesser than b");
+		}
+	}
+
+	public static void printOddnumbers(int n) {
+		for (int i = 1; i < n; i = i + 2) {
+			System.out.println(i);
+		}
+	}
+
+	public static void printEvennumbers(int n) {
+		for (int i = 0; i < n; i = i + 2) {
+			System.out.println(i);
+		}
+	}
+
+	public static void sumOfArrayElements() {
+		int array[] = { 1, 2, 3, 4, 5 };
+		int sum = 0;
+		for (int i = 0; i < 5; i++)
+			sum = sum + array[i];
+		System.out.println("Sum is :" + sum);
+	}
+
+	public static void averageOfArrayElements() {
+		int array[] = { 1, 2, 3, 4, 5 };
+		int sum = 0;
+		for (int a = 0; a < 5; a++)
+			sum = sum + array[a];
+		int length = 5;
+		double average = sum / length;
+		System.out.println("Average is : " + average);
+	}
+
+	public static void checkSpecificValue() {
+		int array[] = { 20, 30, 40, 50, 60 };
+		for (int i = 0; i < 5; i++)
+			if (array[i] == 50)
+				System.out.println("Item found");
+			else
+				System.out.println("Item you have entered is not in the array list");
+	}
+
+	public static void findIndex() {
+		int array[] = { 10, 20, 30, 40, 50 };
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Index and its values are: "+i +"-"+array[i]);
+	}
+	}
+	/*
+	public static void removeElement() {
+		int array[] = {1,2,3,4,5};
+		for(int i=0;i<5;i++)
+			if(array[i]=5)	
+				
+	}
+	*/
+	
+	public static int findMax(int[] numbers) {
+		int max = numbers[0];
+		int noOfelements = numbers.length;
+		
+		for(int i=0;i<noOfelements;i++) {
+			if(max < numbers[i]) {
+				max = numbers[i];
+			
+			}
+		}
+		return max;
+	}
+
+	
+	public static void printConcatenatedString() {
+	String a = "Hello";
+	String b = "Gopal mama";
+	String c = a.concat(b);
+	System.out.println("String is "+c);
+}
+	
+	public static void stringTrim() {
+		String a = "This is ";
+		String b = a.trim();
+		System.out.println(b);
+	}
+}

@@ -1,0 +1,54 @@
+package com.acme;
+
+public class Binaryy{
+	private Node head;
+	
+	public void addNode(Node node)
+	{
+		Node tail = getTailNode();
+		if(tail == null)
+		{
+			head = node;
+		}
+		else
+		{
+			tail.setNextNode(node);
+		}
+	}
+	
+	private Node getTailNode() {
+		Node tail = null;
+		if(head == null)
+		{
+			tail = null;
+		}
+		else
+		{
+			Node currentNode = head;
+			Node nextNode;
+			do {
+				nextNode = currentNode.getNextNode();
+				if(nextNode!=null) {
+					currentNode = currentNode.getNextNode();
+				}
+				else if(nextNode == null) {
+					tail = currentNode;
+				}
+			}
+			while(nextNode !=null);
+		}
+					return tail;
+				}
+			
+		
+	
+	public static void main(String args[])
+	{
+		LinkedList L = new LinkedList(2);
+		Node node1 = new Node(1,null);
+		L.addNode(node1);
+		System.out.println(L);
+	}
+	}
+	
+

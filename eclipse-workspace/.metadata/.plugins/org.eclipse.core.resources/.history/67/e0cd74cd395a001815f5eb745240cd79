@@ -1,0 +1,28 @@
+package com.acme;
+
+public class ChapterOne{
+	
+	public static void main(String args[])
+	{
+		ChapterOne.printGreeting();
+		String greeting = ChapterOne.getGreeting();
+		System.out.println(greeting);
+		String deepthi;
+		//= "Deepthi";
+	}
+	
+	public static void printGreeting()
+	{
+		System.out.println("Hello world");
+	}
+	
+	public static String getGreeting()
+	{
+		return "HelloWorld";
+	}
+	
+	public static String getGreeting(String name)
+	{
+		return "Hello " + name;
+	}
+}

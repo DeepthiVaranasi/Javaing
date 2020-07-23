@@ -1,0 +1,63 @@
+package com.acme;
+
+public class LinkedList {
+
+	private Node headNode; 
+	
+	public LinkedList(int value) {
+		headNode = new Node(value, null); 
+	}
+	
+	public void addNode(Node node) {
+		
+		
+		Node tailNode = getTailNode();
+		
+		tailNode.setNextNode(node);
+			
+	}
+
+	public Node getTailNode() {
+		Node tailNode = null;
+		
+		Node currentNode = headNode;
+		
+		Node nextNode;
+		do {
+			nextNode = currentNode.getNextNode();
+			
+			if(nextNode != null) {
+				currentNode = currentNode.getNextNode();
+				
+			} else if(nextNode == null) {
+				
+				tailNode = currentNode;
+			}
+		} while(nextNode != null);
+		
+		return tailNode;
+	}
+	
+	public static void main(String[] args) {
+		LinkedList myLinkedList = new LinkedList(10);
+		
+		Node tailNode = myLinkedList.getTailNode();
+		
+		Node node = new Node(20, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+		
+		node = new Node(30, null);
+		System.out.println(node);
+		myLinkedList.addNode(node);
+		
+		tailNode = myLinkedList.getTailNode();
+		System.out.println(tailNode);
+				
+	}
+}
+
+
