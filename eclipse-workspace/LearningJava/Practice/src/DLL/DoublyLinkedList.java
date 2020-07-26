@@ -35,7 +35,21 @@ public class DoublyLinkedList {
 	            System.out.print(current.data + " ");  
 	            current = current.next;  
 	        }  
-	    } 
+	    }
+	   public void delete(int data) {
+		   Node current = head;
+		   if(current==null) {
+			   return;
+		   }
+		   if(current.data==data) {
+			   head = current.next;
+		   }
+		   while(current!=null&&current!=data) {
+			   prev = current;
+			   current = current.next;
+		   }
+		   
+	   }
 	public static void main(String[] args) {   
 	        DoublyLinkedList dList = new DoublyLinkedList(); 
 	        dList.addNode(1);  
