@@ -50,6 +50,23 @@ public class DoublyLinkedList {
 		   }
 		   
 	   }
+	   
+	   public void delete(Node node) {
+		   Node current = head;
+		   if(current==null||node == null) {
+			  System.out.println("Its null");  
+		   }
+		   if(current == node) {
+			   	head = current.next;
+		   }
+		   if(node.next!=null) {
+			   node.next.prev=node.next;
+		   }
+		   if(node.prev!=null) {
+			   node.previous.next=node.prev;
+		   }
+		                
+	   }
 	public static void main(String[] args) {   
 	        DoublyLinkedList dList = new DoublyLinkedList(); 
 	        dList.addNode(1);  
